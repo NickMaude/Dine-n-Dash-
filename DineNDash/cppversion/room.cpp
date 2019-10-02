@@ -36,10 +36,10 @@ void Room::displayAvailability() {
     cout << setw(4) << room[i];
   }
   cout << endl;
-  for (int i = 0; i < 16; ++i) {
-    for (int j = 0; j < 10; ++j) {
-      if (j == 0) {
-        switch (i) {
+  for (int hourIndex = 0; hourIndex < 10; ++hourIndex) {
+    for (int roomIndex = 0; roomIndex < 16; ++roomIndex) {
+      if (roomIndex == 0) {
+        switch (hourIndex) {
           case 0:
             cout << "08:00";
             break;
@@ -72,7 +72,7 @@ void Room::displayAvailability() {
             break;
         }
       }
-      cout << setprecision(1) << setw(4) << getAvailability(j, i);
+      cout << setprecision(1) << setw(4) << getAvailability(hourIndex, roomIndex);
     }
     cout << endl;
   }
