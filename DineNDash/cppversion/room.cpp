@@ -4,7 +4,7 @@
 #include "room.h"
 
 Room::Room() {
-  for (int i = 0; i < 16; ++i) {
+  for (int i = 0; i < 17; ++i) {
     room[i] = 0;
     for (int j = 0; j < 10; ++j) {
       availability[j][i] = 0;
