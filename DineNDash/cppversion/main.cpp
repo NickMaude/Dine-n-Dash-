@@ -56,7 +56,8 @@ int main() {
     }
     fin.close();
     rooms.calculateAvailability();
-    cout << rooms.getAvailability(0,16) << endl;
+    rooms.displayAvailability();
+  /*cout << rooms.getAvailability(0,16) << endl;
     cout << rooms.getAvailability(1,16) << endl;
     cout << rooms.getAvailability(2,16) << endl;
     cout << rooms.getAvailability(3,16) << endl;
@@ -65,7 +66,7 @@ int main() {
     cout << rooms.getAvailability(6,16) << endl;
     cout << rooms.getAvailability(7,16) << endl;
     cout << rooms.getAvailability(8,16) << endl;
-    cout << rooms.getAvailability(9,16) << endl;
+    cout << rooms.getAvailability(9,16) << endl;*/
   } else {
     cout << "File not found." << endl;
   }

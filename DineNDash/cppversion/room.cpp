@@ -17,7 +17,7 @@ void Room::readLineOfInput(int x, fstream& fin) {
     fin.getline(input, 256, ',');
     availability[x][i] += atoi(input);
   }
-  availability[x][16] += 1;
+  availability[x][16] = availability[x][16] + 1;
 }
 void Room::calculateAvailability() {
   for (int i = 0; i < 16; ++i) {
