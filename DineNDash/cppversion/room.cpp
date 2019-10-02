@@ -33,7 +33,7 @@ void Room::calculateAvailability() {
 void Room::displayAvailability() {
   cout << "     ";
   for (int i = 0; i < 16; ++i) {
-    cout << setw(6) << room[i];
+    cout << setw(4) << room[i];
   }
   cout << endl;
   for (int i = 0; i < 16; ++i) {
@@ -72,7 +72,7 @@ void Room::displayAvailability() {
             break;
         }
       }
-      cout << setprecision(1) << setw(6) << getAvailability(j, i);
+      cout << setprecision(1) << setw(4) << getAvailability(j, i);
     }
     cout << endl;
   }
