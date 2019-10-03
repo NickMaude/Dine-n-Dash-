@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Dine N Dash'
+rootProject.name='My Application'
