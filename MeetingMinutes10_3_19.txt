@@ -1,0 +1,28 @@
+10-3-19 Meeting Minutes
+
+  -Consider Using server for data storage in the future so the app won't need to be recompiled for each update
+
+  -Ideas for data collection
+      -NearBy API
+
+      -Video Suggested by Kreikatt
+        https://www.youtube.com/watch?v=UeAKTjx_eKA&vl=en
+
+
+  -New Project Name(In the works)
+    -Study Buddy?
+    -???
+
+  -talk about new layout for app
+  -UI for the App
+    -Create Map of Study Rooms
+    -Show Probability of room being available over room on map
+    -tabs for each floor
+
+  -Second Sprint goals
+    -Collect more data (5 times per week each) (all)
+    -Continue to analyze data (Chase)
+    -C++ class of functions (Nick)
+    -Integrate C++ Class/Java Convert into Android Studio App (Jeff)
+    -Create more concrete page design for App (Laura)
+    -Commit Progress to Repository (all)
