@@ -1,0 +1,19 @@
+10-16-19 Meeting minutes
+
+  Completed during Meeting
+    -all run app login screen
+    -watch videos on how to create multiple screens on app
+    -first tests on pixel 3 emulator
+    -Edit XML files
+
+  To Do list for live Demo(10-22-19)
+    -Login screen
+    -One Page with all rooms and probability of room being empty at one time
+
+  To Do for final app
+    -Separate pages for each floor
+    -improved GUI visuals
+    -Probability of each room changes with time
+    -possible server for updating data
+
+  Next Meeting(10-20-19)
