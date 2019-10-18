@@ -1,10 +1,10 @@
 # Study_Buddy
-Android App to help Ohio University Students determine the probability of finding study rooms in the ARC.
+Android App to determine the probability of students at Ohio University finding a study room avalible in the ARC. 
 
-Project for CS 3560 Software Engineering Tools
+Completed for CS 3560.
 
-## Created By:
-- Nick Maude
+## Created by 
+- Nick Maude 
 - Chase King
 - Laura Klions
 - Jeffrey Parker

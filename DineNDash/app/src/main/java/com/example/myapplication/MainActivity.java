@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-   // EditText username = (EditText)findViewById(R.id.editText);
-   // EditText password = (EditText)findViewById(R.id.editText2);
+    // EditText username = (EditText)findViewById(R.id.editText);
+    // EditText password = (EditText)findViewById(R.id.editText2);
 
     public void login(View view) {
         EditText username = (EditText)findViewById(R.id.editText3);
