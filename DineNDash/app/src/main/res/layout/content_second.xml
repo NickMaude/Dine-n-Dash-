@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:text="Select a location"
         android:textSize="30sp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/button5"
         tools:layout_editor_absoluteX="94dp" />
 
     <ScrollView
@@ -37,11 +37,12 @@
                 app:srcCompat="@drawable/russ" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/ARC"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Academic and Research Center"
-                tools:text="Academic and Research Center" />
+                tools:text="Academic and Research Center"
+                android:onClick="ARC"/>
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -69,5 +70,14 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="10dp"
+        android:onClick="logout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,14 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
-import android.widget.EditText;
 
-public class second extends AppCompatActivity {
+public class ARCdata extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_arcdata);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,13 +29,8 @@ public class second extends AppCompatActivity {
             }
         });
     }
-
-    public void ARC(View view) {
-            Intent intent =new Intent(this,ARCdata.class);
-            startActivity(intent);
-    }
-    public void logout(View view) {
-        Intent intent =new Intent(this,MainActivity.class);
+    public void back(View view) {
+        Intent intent =new Intent(this,second.class);
         startActivity(intent);
     }
 
