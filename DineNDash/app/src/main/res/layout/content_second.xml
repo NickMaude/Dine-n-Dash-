@@ -31,10 +31,10 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="389dp"
-                android:layout_height="254dp"
-                app:srcCompat="@drawable/russ" />
+                android:id="@+id/imageView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/russ2" />
 
             <Button
                 android:id="@+id/ARC"
@@ -48,7 +48,8 @@
                 android:id="@+id/imageView8"
                 android:layout_width="match_parent"
                 android:layout_height="259dp"
-                app:srcCompat="@drawable/shively" />
+                android:contentDescription="TODO"
+                android:src="@drawable/shively" />
 
             <Button
                 android:id="@+id/button2"
@@ -60,7 +61,8 @@
                 android:id="@+id/imageView7"
                 android:layout_width="match_parent"
                 android:layout_height="263dp"
-                app:srcCompat="@drawable/nelson" />
+                android:src="@drawable/nelson"
+                android:contentDescription="TODO" />
 
             <Button
                 android:id="@+id/button3"
@@ -75,9 +77,11 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:onClick="logout"
         android:text="Logout"
-        tools:layout_editor_absoluteX="322dp"
-        tools:layout_editor_absoluteY="10dp"
-        android:onClick="logout"/>
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        tools:layout_editor_absoluteY="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
