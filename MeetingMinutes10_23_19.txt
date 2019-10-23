@@ -1,0 +1,28 @@
+10-23-19
+All members present
+
+Meeting Minutes
+
+  -Create class to read in data in C++ (Laura by Tues 10-29)
+    -read from and write to
+    -Container Class of rooms
+    -Functions to analyze _data
+
+  -Covert class to java(tbd)
+    -Software to help with converting c++
+    -https://www.tangiblesoftwaresolutions.com/product_details/cplusplus_to_java_converter_details.html
+
+  -Research Web Server(Nick)
+    -Suggested by Krerkkiat:
+    -https://www.docker.com/get-started
+      -[one free repository]
+    -AWS free tier:
+    -https://aws.amazon.com/free/?sc_icampaign=acq_freetier&sc_icontent=awssm-evergreen-prospects&sc_iplace=hero&trk=ha_awssm-evergreen-prospects&sc_ichannel=ha&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc
+
+  -Look into linking c++ classes/projects into android studio
+    -Documentation on linking c++ code:
+    -https://developer.android.com/studio/projects/add-native-code
+    -Tool needed to do so:
+    -https://developer.android.com/ndk/guides
+
+  -Look at tutorials on how to make graphs
