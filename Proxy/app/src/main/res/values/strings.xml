@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Proxy</string>
     <string name="title_activity_second">second</string>
     <string name="title_activity_arcdata">ARCdata</string>
     <string name="title_activity_studyrooms">studyrooms</string>
