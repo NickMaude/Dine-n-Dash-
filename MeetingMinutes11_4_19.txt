@@ -2,3 +2,11 @@
 All members present
 
 Meeting Minutes
+
+  -Still working on data processing (Laura)
+
+  -Added logo and changed app display name, will help with data processing (Chase)
+
+  -Working on data storage, linked app to Firebase (Nick)
+
+  -Helping Nick (Jeff)
