@@ -22,7 +22,6 @@
         app:srcCompat="@drawable/logo2" />
 
 
-
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
@@ -30,11 +29,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="498dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_action_user"
-        />
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/editText3"
@@ -49,7 +47,7 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
