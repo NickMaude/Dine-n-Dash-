@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        findViewById(R.id.button6).setOnClickListener(this);
     }
 
 
@@ -25,5 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent =new Intent(this,CreateAccount.class);
+        startActivity(intent);
     }
 }
