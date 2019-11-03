@@ -27,9 +27,10 @@ public class ARCdata extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arcdata);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+     /*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +40,7 @@ public class ARCdata extends AppCompatActivity {
             }
         });
 
-
+  */
         mprogressbar = (ProgressBar) findViewById(R.id.progressBar);
 
         new Thread(new Runnable() {

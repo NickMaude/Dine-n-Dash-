@@ -10,9 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
-public class second extends AppCompatActivity {
+public class second extends AppCompatActivity{
+    EditText ARC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,18 @@ public class second extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Button arc = (Button) findViewById(R.id.ARC);
+
+        arc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 =new Intent(second.this,ARCdata.class);
+                startActivity(intent1);
+            }
+        });
+
         FloatingActionButton fab = findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,10 +45,7 @@ public class second extends AppCompatActivity {
 
     }
 
-    public void ARC(View view) {
-            Intent intent =new Intent(this,ARCdata.class);
-            startActivity(intent);
-    }
+
     public void logout(View view) {
         Intent intent =new Intent(this,MainActivity.class);
         startActivity(intent);

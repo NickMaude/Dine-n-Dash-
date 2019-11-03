@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="Academic and Research Center"
                 tools:text="Academic and Research Center"
-                android:onClick="ARC"/>
+                />
 
             <ImageView
                 android:id="@+id/imageView8"
