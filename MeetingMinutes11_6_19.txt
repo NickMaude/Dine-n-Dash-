@@ -1,0 +1,19 @@
+Proxy Meeting Minutes 11/6/2019
+
+All members present:
+  Laura Klions
+  Nick Maude
+  Jeff Parker
+  Chase King
+
+Discussed abandoning live statistics due to time limitations.
+    Only allow users to occupy a room or table from the app
+    Use Firebase to share occupancy Data from app
+
+Work on figuring out how to connect Firebase to the app
+
+Postpone fitting app to all screen sizes and densities for time purposes
+    Approaching last sprint
+    Using pixel 3 emulator for final demo
+
+Work on Doxygen documentation
