@@ -56,7 +56,7 @@
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="studyrooms"
+                android:text="             studyrooms"
                 android:textSize="36sp" />
 
             <ImageView
@@ -73,7 +73,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="110 - open"
+                    android:text="room 110 "
                     android:textSize="24sp" />
 
                 <Button
@@ -94,7 +94,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="112 - open"
+                    android:text="112 "
                     android:textSize="24sp" />
 
                 <Button
@@ -115,7 +115,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="131 - open"
+                    android:text="131 "
                     android:textSize="24sp" />
 
                 <Button
@@ -136,7 +136,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="147 - open"
+                    android:text="147 "
                     android:textSize="24sp" />
 
                 <Button
@@ -157,7 +157,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="149 - open"
+                    android:text="149 "
                     android:textSize="24sp" />
 
                 <Button
@@ -178,7 +178,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="151 - open"
+                    android:text="151 "
                     android:textSize="24sp" />
 
                 <Button
@@ -199,7 +199,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="153 - open"
+                    android:text="153 "
                     android:textSize="24sp" />
 
                 <Button
@@ -239,7 +239,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="214- open"
+                    android:text="214"
                     android:textSize="24sp" />
 
                 <Button
@@ -260,7 +260,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="216 - open"
+                    android:text="216 "
                     android:textSize="24sp" />
 
                 <Button
@@ -281,7 +281,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="217- open"
+                    android:text="217"
                     android:textSize="24sp" />
 
                 <Button
@@ -302,7 +302,7 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="219 - open"
+                    android:text="219 "
                     android:textSize="24sp" />
 
                 <Button
