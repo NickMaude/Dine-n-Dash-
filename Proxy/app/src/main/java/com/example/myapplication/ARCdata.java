@@ -146,16 +146,17 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                 }
                 break;
 
+
             case R.id.r147:
                 database(141,1);
                 Button r147 =  (Button)findViewById(R.id.r147);
                 if(r147.getText()=="Occupy"){
                     r147.setText("Occupied");
-                    database(141,1);
+                    database(147,1);
 
                 } else{
                     r147.setText("Occupy");
-                    database(141,0);
+                    database(147,0);
 
                 }
                 break;
@@ -186,8 +187,17 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
                 }
                 break;
+            case R.id.r153:
+                Button r153 =  (Button)findViewById(R.id.r153);
+                if(r153.getText()=="Occupy"){
+                    r153.setText("Occupied");
+                    database(153,1);
 
-
+                } else{
+                    r153.setText("Occupy");
+                    database(153,0);
+                }
+                break;
             case R.id.r214:
                 Button r214 =  (Button)findViewById(R.id.r214);
                 if(r214.getText()=="Occupy"){
@@ -265,10 +275,26 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     //this function will be called OnCreate and will display whether a study room is occupied
     private void set_studyRooms(){
-        int studyRooms[] = {110, 112,131,147,149,151,153,214,216,217,219}; // array of study room numbers
+        final int roomnumbers[] = {110, 112,131,147,149,151,153,214,216,217,219}; // array of study room numbers
+       final Button studyRooms[] = new Button[11];
+        studyRooms[0]= findViewById(R.id.r110);
+        studyRooms[1]= findViewById(R.id.r112);
+        studyRooms[2]= findViewById(R.id.r131);
+        //studyRooms[2]= findViewById(R.id.r137);
+        studyRooms[3]= findViewById(R.id.r147);
+        studyRooms[4]= findViewById(R.id.r149);
+        studyRooms[5]= findViewById(R.id.r151);
+        studyRooms[6]= findViewById(R.id.r153);
+        studyRooms[7]= findViewById(R.id.r214);
+        studyRooms[8]= findViewById(R.id.r216);
+        studyRooms[9]= findViewById(R.id.r217);
+        studyRooms[10]= findViewById(R.id.r219);
+
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         for(int i =0; i< 11; i++){ //each room
-            DatabaseReference myRef = database.getReference(Integer.toString(studyRooms[i]));
+            final int j =i;
+            DatabaseReference myRef = database.getReference(Integer.toString(roomnumbers[i]));
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -276,9 +302,15 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                     // whenever data at this location is updated.
                     String isoccupied = dataSnapshot.getValue(String.class);// 1 is added to array if occupied,
                     Log.d("room number " , "Value is: " + isoccupied);
+                    if(isoccupied.equals("0")){
+                        studyRooms[j].setText("Occupy");
+                    }else{
+                        studyRooms[j].setText("Occupied");
 
-
+                    }
                 }
+
+
 
                 @Override
                 public void onCancelled(DatabaseError error) {
@@ -286,6 +318,8 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                     Log.w("room number " , "Failed to read value.", error.toException());
                 }
             });
+
+
         }
 
     }
