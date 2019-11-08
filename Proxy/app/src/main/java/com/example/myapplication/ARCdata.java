@@ -36,7 +36,7 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setOnClickListener();
-
+        set_studyRooms();
         mprogressbar = (ProgressBar) findViewById(R.id.progressBar);
 
         new Thread(new Runnable() {
@@ -263,5 +263,31 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    //this function will be called OnCreate and will display whether a study room is occupied
+    private void set_studyRooms(){
+        int studyRooms[] = {110, 112,131,147,149,151,153,214,216,217,219}; // array of study room numbers
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        for(int i =0; i< 11; i++){ //each room
+            DatabaseReference myRef = database.getReference(Integer.toString(studyRooms[i]));
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+                    String isoccupied = dataSnapshot.getValue(String.class);// 1 is added to array if occupied,
+                    Log.d("room number " , "Value is: " + isoccupied);
+
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    // Failed to read value
+                    Log.w("room number " , "Failed to read value.", error.toException());
+                }
+            });
+        }
+
+    }
 
 }
