@@ -11,7 +11,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.os.Handler;
 import android.util.Log;
@@ -23,7 +22,6 @@ import android.widget.TextView;
 public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar mprogressbar;
     private int mprogressbarStat =0;
-   // public int roomnum;
     private Handler handler = new Handler();
     private TextView full;
     private TextView notbusy;
@@ -32,11 +30,12 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arcdata);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         setOnClickListener();
+
+        //finds if rooms are already occupied
         set_studyRooms();
+
+        //create progressbar object
         mprogressbar = (ProgressBar) findViewById(R.id.progressBar);
 
         new Thread(new Runnable() {
@@ -44,7 +43,7 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 while(mprogressbarStat < 100){
                     mprogressbarStat++;
-                    android.os.SystemClock.sleep(50);
+                    android.os.SystemClock.sleep(100);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -65,14 +64,11 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
+    //sets activity to selection page
     public void back(View view) {
         Intent intent =new Intent(this,second.class);
         startActivity(intent);
-    }
-
-    public void readData(){
-
-
     }
 
 
@@ -105,7 +101,6 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-       // database();
 
         switch (view.getId()) {
             case R.id.r110:
@@ -269,18 +264,17 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.r217).setOnClickListener(this);
         findViewById(R.id.r219).setOnClickListener(this);
 
-
-
     }
 
     //this function will be called OnCreate and will display whether a study room is occupied
     private void set_studyRooms(){
         final int roomnumbers[] = {110, 112,131,147,149,151,153,214,216,217,219}; // array of study room numbers
-       final Button studyRooms[] = new Button[11];
+
+        //array of buttons used when setting their text value
+        final Button studyRooms[] = new Button[11];
         studyRooms[0]= findViewById(R.id.r110);
         studyRooms[1]= findViewById(R.id.r112);
         studyRooms[2]= findViewById(R.id.r131);
-        //studyRooms[2]= findViewById(R.id.r137);
         studyRooms[3]= findViewById(R.id.r147);
         studyRooms[4]= findViewById(R.id.r149);
         studyRooms[5]= findViewById(R.id.r151);
@@ -288,20 +282,30 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
         studyRooms[7]= findViewById(R.id.r214);
         studyRooms[8]= findViewById(R.id.r216);
         studyRooms[9]= findViewById(R.id.r217);
-        studyRooms[10]= findViewById(R.id.r219);
+        studyRooms[10]=findViewById(R.id.r219);
 
-
+        //create Firebase object
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        for(int i =0; i< 11; i++){ //each room
+
+        for(int i =0; i< 11; i++){ //there are 11 study rooms
             final int j =i;
+
+            //there is database reference for each room in freebase
             DatabaseReference myRef = database.getReference(Integer.toString(roomnumbers[i]));
+
             myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // This method is called once with the initial value and again
                     // whenever data at this location is updated.
-                    String isoccupied = dataSnapshot.getValue(String.class);// 1 is added to array if occupied,
+
+                    //the isoccupied value is 1 or 0, 1 means the room is occupied,
+                    String isoccupied = dataSnapshot.getValue(String.class);
+
+                    //print to android studio to check value
                     Log.d("room number " , "Value is: " + isoccupied);
+
+                    //if room is not occupied the button says occupy
                     if(isoccupied.equals("0")){
                         studyRooms[j].setText("Occupy");
                     }else{
@@ -311,14 +315,13 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                 }
 
 
-
                 @Override
                 public void onCancelled(DatabaseError error) {
-                    // Failed to read value
-                    Log.w("room number " , "Failed to read value.", error.toException());
+                    // Failed to read value from real-time database
+                    //in case everything breaks
+                    Log.w("is occupied value " , "Failed to read value.", error.toException());
                 }
             });
-
 
         }
 
