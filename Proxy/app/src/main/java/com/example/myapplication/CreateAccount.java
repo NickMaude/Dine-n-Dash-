@@ -57,6 +57,11 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             editTextPassword.requestFocus();
             return;
         }
+        if(!username.contains("ohio.edu")){
+            editTextPassword.setError("needs to be an ohio.edu email");
+            editTextPassword.requestFocus();
+            return;
+        }
 
         mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
