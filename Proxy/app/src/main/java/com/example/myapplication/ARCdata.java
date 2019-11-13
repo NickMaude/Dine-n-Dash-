@@ -17,7 +17,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextClock;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar mprogressbar;
@@ -34,6 +37,9 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
         //finds if rooms are already occupied
         set_studyRooms();
+
+        arcdata();
+
 
         //create progressbar object
         mprogressbar = (ProgressBar) findViewById(R.id.progressBar);
@@ -324,6 +330,15 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
             });
 
         }
+
+    }
+
+    private void arcdata(){
+        TextClock clock = (TextClock) findViewById(R.id.clock);
+        Calendar time = Calendar.getInstance();
+        int hour = time.get(Calendar.HOUR_OF_DAY);
+        Log.d("hour is " , "Value is: " + hour);
+
 
     }
 
