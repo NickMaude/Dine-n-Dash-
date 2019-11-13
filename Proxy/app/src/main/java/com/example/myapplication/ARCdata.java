@@ -38,8 +38,6 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
         //finds if rooms are already occupied
         set_studyRooms();
 
-        arcdata();
-
 
         //create progressbar object
         mprogressbar = (ProgressBar) findViewById(R.id.progressBar);
@@ -49,7 +47,7 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
             public void run() {
                 while(mprogressbarStat < 100){
                     mprogressbarStat++;
-                    android.os.SystemClock.sleep(100);
+                    android.os.SystemClock.sleep(60);
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -57,6 +55,7 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                         }
                     });
                 }
+                arcdata();
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -334,10 +333,34 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void arcdata(){
-        TextClock clock = (TextClock) findViewById(R.id.clock);
+        //TextClock clock = (TextClock) findViewById(R.id.clock);
         Calendar time = Calendar.getInstance();
         int hour = time.get(Calendar.HOUR_OF_DAY);
         Log.d("hour is " , "Value is: " + hour);
+
+        //create firebase object
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(Integer.toString(hour));
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                TextView isbusy = findViewById(R.id.isbusy);
+                String value = dataSnapshot.getValue(String.class);
+                Log.d("TIME", "hour is: " + value);
+                isbusy.setText(dataSnapshot.getValue().toString());
+
+                }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("hour", "Failed to read value.", error.toException());
+            }
+        });
+
+
 
 
     }
