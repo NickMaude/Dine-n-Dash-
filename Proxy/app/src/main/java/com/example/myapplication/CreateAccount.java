@@ -29,6 +29,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         editTextPassword = findViewById(R.id.editText);
         mAuth = FirebaseAuth.getInstance();
         findViewById(R.id.button7).setOnClickListener(this);
+        findViewById(R.id.button9).setOnClickListener(this);
 
 
     }
