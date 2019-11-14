@@ -51,6 +51,7 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                     });
                 }
                 arcdata();
+                bluetoothData();
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -325,6 +326,35 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
+    private void bluetoothData(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("NUM DEVICES");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                TextView bluetooth = findViewById(R.id.bluetooth);
+                String value = dataSnapshot.getValue(String.class);
+
+                Log.d("DEVICES", " num of bluetooth:" + value);
+
+                //reports how busy the arc is
+               // String content ="found " + dataSnapshot.getValue().toString() + " bluetooth devices";
+                //bluetooth.setText(content);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("hour", "Failed to read value.", error.toException());
+            }
+        });
+
+    }
+
 
     private void arcdata(){
 
