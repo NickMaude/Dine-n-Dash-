@@ -2,8 +2,6 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,7 +15,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -26,8 +23,6 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar mprogressbar;
     private int mprogressbarStat =0;
     private Handler handler = new Handler();
-    private TextView full;
-    private TextView notbusy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +73,10 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
 
     public void database(int roomnum, int isoccupied){
+        //create real-time database object
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(Integer.toString(roomnum));
         myRef.setValue(Integer.toString(isoccupied));
-        //myRef.child("room number" + roomnum);
-
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -106,7 +100,7 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
+        // if the "occupy" button is clicked it changes to "occupied"
         switch (view.getId()) {
             case R.id.r110:
                 Button r110 =  (Button)findViewById(R.id.r110);
@@ -333,8 +327,10 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void arcdata(){
-        //TextClock clock = (TextClock) findViewById(R.id.clock);
+
         Calendar time = Calendar.getInstance();
+
+        //get hour in 24hr format
         int hour = time.get(Calendar.HOUR_OF_DAY);
         Log.d("hour is " , "Value is: " + hour);
 
@@ -348,7 +344,10 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                 // whenever data at this location is updated.
                 TextView isbusy = findViewById(R.id.isbusy);
                 String value = dataSnapshot.getValue(String.class);
+
                 Log.d("TIME", "hour is: " + value);
+
+                //reports how busy the arc is
                 isbusy.setText(dataSnapshot.getValue().toString());
 
                 }
@@ -359,9 +358,6 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                 Log.w("hour", "Failed to read value.", error.toException());
             }
         });
-
-
-
 
     }
 
