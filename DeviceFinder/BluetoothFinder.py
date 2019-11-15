@@ -3,7 +3,7 @@ from bluetooth import *
 import socket
 import time
 config = {
-  "apiKey": "AIzaSyCmqzyVEF1YpTX7lCXZsDl6Ey3IV6RwoTY",
+  "apiKey": "API key",
   "authDomain": "proxy-193e1.firebaseapp.com",
   "databaseURL": "https://proxy-193e1.firebaseio.com/",
   "storageBucket": "proxy-193e1.appspot.com"
