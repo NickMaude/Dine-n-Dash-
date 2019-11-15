@@ -341,8 +341,8 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
                 Log.d("DEVICES", " num of bluetooth:" + value);
 
                 //reports how busy the arc is
-               // String content ="found " + dataSnapshot.getValue().toString() + " bluetooth devices";
-                //bluetooth.setText(content);
+               String content ="found " + dataSnapshot.getValue().toString() + " bluetooth devices";
+                bluetooth.setText(content);
 
             }
 
