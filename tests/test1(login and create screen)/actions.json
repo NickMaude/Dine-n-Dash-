@@ -1,0 +1,192 @@
+{
+  "events": [
+    {
+      "sourceScreenId": "0",
+      "destinationScreenId": "1",
+      "startTimeSeconds": 2.078,
+      "endTimeSeconds": 2.841,
+      "executionResult": "SUCCESS",
+      "launch": {
+        "action": "android.intent.action.MAIN"
+      }
+    },
+    {
+      "sequence": 1,
+      "sourceScreenId": "1",
+      "destinationScreenId": "1",
+      "startTimeSeconds": 3.858,
+      "endTimeSeconds": 4.36,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TAP",
+        "childSequence": "0.0.1.0.0.0.4",
+        "targetDetails": {
+          "componentType": "BUTTON",
+          "resourceName": "com.example.myapplication:id/login",
+          "className": "androidx.appcompat.widget.AppCompatButton",
+          "androidClassName": "android.widget.Button",
+          "textLabel": "Login"
+        }
+      }
+    },
+    {
+      "sequence": 2,
+      "sourceScreenId": "1",
+      "destinationScreenId": "2",
+      "startTimeSeconds": 4.641,
+      "endTimeSeconds": 5.277,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "SWIPE",
+        "childSequence": "0.0.1.0.0.0.5",
+        "targetDetails": {
+          "componentType": "BUTTON",
+          "resourceName": "com.example.myapplication:id/button6",
+          "className": "androidx.appcompat.widget.AppCompatButton",
+          "androidClassName": "android.widget.Button",
+          "textLabel": "Create Account"
+        }
+      }
+    },
+    {
+      "sequence": 3,
+      "sourceScreenId": "2",
+      "destinationScreenId": "1",
+      "startTimeSeconds": 5.938,
+      "endTimeSeconds": 6.494,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TAP",
+        "childSequence": "0.0.1.0.0.0.2",
+        "targetDetails": {
+          "componentType": "BUTTON",
+          "resourceName": "com.example.myapplication:id/button9",
+          "className": "androidx.appcompat.widget.AppCompatButton",
+          "androidClassName": "android.widget.Button",
+          "textLabel": "login"
+        }
+      }
+    },
+    {
+      "sequence": 4,
+      "sourceScreenId": "1",
+      "destinationScreenId": "1",
+      "startTimeSeconds": 6.688,
+      "endTimeSeconds": 7.063,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TYPE_TEXT",
+        "childSequence": "0.0.1.0.0.0.3",
+        "enterTextString": "text",
+        "targetDetails": {
+          "resourceName": "com.example.myapplication:id/editText3",
+          "className": "androidx.appcompat.widget.AppCompatEditText",
+          "androidClassName": "android.widget.EditText"
+        }
+      }
+    },
+    {
+      "sequence": 5,
+      "sourceScreenId": "1",
+      "destinationScreenId": "1",
+      "startTimeSeconds": 7.397,
+      "endTimeSeconds": 7.791,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TYPE_TEXT",
+        "childSequence": "0.0.1.0.0.0.2",
+        "enterTextString": "text",
+        "targetDetails": {
+          "resourceName": "com.example.myapplication:id/editText2",
+          "className": "androidx.appcompat.widget.AppCompatEditText",
+          "androidClassName": "android.widget.EditText"
+        }
+      }
+    },
+    {
+      "sequence": 6,
+      "sourceScreenId": "1",
+      "destinationScreenId": "2",
+      "startTimeSeconds": 8.075,
+      "endTimeSeconds": 9.28,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TAP",
+        "childSequence": "0.0.1.0.0.0.5",
+        "targetDetails": {
+          "componentType": "BUTTON",
+          "resourceName": "com.example.myapplication:id/button6",
+          "className": "androidx.appcompat.widget.AppCompatButton",
+          "androidClassName": "android.widget.Button",
+          "textLabel": "Create Account"
+        }
+      }
+    },
+    {
+      "sequence": 7,
+      "sourceScreenId": "2",
+      "destinationScreenId": "2",
+      "startTimeSeconds": 9.481,
+      "endTimeSeconds": 9.906,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TAP",
+        "childSequence": "0.0.1.0.0.0.0",
+        "targetDetails": {
+          "componentType": "BUTTON",
+          "resourceName": "com.example.myapplication:id/button7",
+          "className": "androidx.appcompat.widget.AppCompatButton",
+          "androidClassName": "android.widget.Button",
+          "textLabel": "Sign Up"
+        }
+      }
+    },
+    {
+      "sequence": 8,
+      "sourceScreenId": "2",
+      "destinationScreenId": "2",
+      "startTimeSeconds": 10.064,
+      "endTimeSeconds": 10.368,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TYPE_TEXT",
+        "childSequence": "0.0.1.0.0.0.3",
+        "enterTextString": "text",
+        "targetDetails": {
+          "resourceName": "com.example.myapplication:id/editText",
+          "className": "androidx.appcompat.widget.AppCompatEditText",
+          "androidClassName": "android.widget.EditText"
+        }
+      }
+    },
+    {
+      "sequence": 9,
+      "sourceScreenId": "2",
+      "destinationScreenId": "2",
+      "startTimeSeconds": 10.534,
+      "endTimeSeconds": 12.121,
+      "executionResult": "SUCCESS",
+      "target": {
+        "type": "TYPE_TEXT",
+        "childSequence": "0.0.1.0.0.0.4",
+        "enterTextString": "text",
+        "targetDetails": {
+          "resourceName": "com.example.myapplication:id/editText4",
+          "className": "androidx.appcompat.widget.AppCompatEditText",
+          "androidClassName": "android.widget.EditText"
+        }
+      }
+    },
+    {
+      "sequence": 10,
+      "sourceScreenId": "2",
+      "destinationScreenId": "2",
+      "startTimeSeconds": 12.334,
+      "endTimeSeconds": 62.977,
+      "executionResult": "SUCCESS",
+      "wait": {
+        "durationSeconds": 48.0
+      }
+    }
+  ]
+}
