@@ -39,18 +39,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if(password.isEmpty()){
-            editTextPassword.setError("password is required");
+            editTextPassword.setError("Password is required");
             editTextPassword.requestFocus();
             return;
 
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(username).matches()){//if email is legit
-            editTextUsername.setError("enter a real email");
+            editTextUsername.setError("Enter a real email address");
             editTextUsername.requestFocus();
             return;
         }
         if(password.length()<6){
-            editTextPassword.setError("password needs to be greater than 6");
+            editTextPassword.setError("Password has to be more than 6 characters long");
             editTextPassword.requestFocus();
             return;
         }
