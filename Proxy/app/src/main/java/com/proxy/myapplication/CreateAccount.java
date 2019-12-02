@@ -1,7 +1,8 @@
-package com.example.myapplication;
+package com.proxy.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -15,40 +16,45 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
- * Class to create and operate the login page of the proxy app
+ * Class for users to create an account on the Proxy app
  *
  * @author x
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    FirebaseAuth mAuth;
-    EditText editTextUsername, editTextPassword;
+public class CreateAccount extends AppCompatActivity implements View.OnClickListener {
+
     /**
-     * Method to add user data to firebase
-     *
-     * @param savedInstanceState
+     * The Edit text username.
      */
+    EditText editTextUsername, /**
+     * The Edit text password.
+     */
+    editTextPassword;
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.button6).setOnClickListener(this);
-        findViewById(R.id.login).setOnClickListener(this);
-        mAuth=FirebaseAuth.getInstance();
-        editTextUsername = findViewById(R.id.editText2);
-        editTextPassword = findViewById(R.id.editText3);
+        setContentView(R.layout.activity_create_account);
+        editTextUsername = findViewById(R.id.editText4);
+        editTextPassword = findViewById(R.id.editText);
+        mAuth = FirebaseAuth.getInstance();
+        findViewById(R.id.button7).setOnClickListener(this);
+        findViewById(R.id.button9).setOnClickListener(this);
+
+
     }
 
     /**
-     * Method to check if username and password match an existing user
-     *  Username must be a valid Ohio University email
-     *  Password must be at least 6 characters long
+     * Method to make sure user meets all requirement for new account
      *
+     * A valid email and password are required
+     *  Email must be and @ohio.edu
+     *  Password must be at least 6 char
      *
      */
-    public void login() {
+    private void registerUser(){
         String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        //authentication cases
         if(username.isEmpty()){
             editTextUsername.setError("Email is required");
             editTextUsername.requestFocus();
@@ -70,36 +76,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editTextPassword.requestFocus();
             return;
         }
+        if(!username.contains("ohio.edu")){
+            editTextPassword.setError("Needs to be an ohio.edu email address");
+            editTextPassword.requestFocus();
+            return;
+        }
 
-        mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent intent1 = new Intent(MainActivity.this, second.class);
-                    intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent1);
+                    Toast.makeText(getApplicationContext(), "User was registered",Toast.LENGTH_SHORT).show();
 
-                }else{
-                    Toast.makeText(getApplicationContext(),task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
     /**
-     * Trigger login and start activity when button is pressed by user
-     *
-     * @param view
-     */
+    * Will create account when registerUser() finishes
+    * */
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button6:
-                Intent intent = new Intent(this, CreateAccount.class);
-                startActivity(intent);
+        switch (view.getId()){
+            case R.id.button7: //sign up button (good name)
+                registerUser();
                 break;
-            case R.id.login:
-                login();
+            case R.id.button9: //Login Button
+                startActivity(new Intent(this, MainActivity.class));
                 break;
 
         }

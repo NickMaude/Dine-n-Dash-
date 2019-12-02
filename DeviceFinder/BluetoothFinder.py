@@ -15,7 +15,6 @@ while True:
     print("found %d devices" % len(nearby_devices))
     print("BD_ADDR: " + str(nearby_devices))
     #finds number of bluetooth devices and writes to firebase
-
     database.child("BD_ADDR").push(str(nearby_devices))
     database.child("NUM DEVICES").set(str(len(nearby_devices)))
     time.sleep(60)
