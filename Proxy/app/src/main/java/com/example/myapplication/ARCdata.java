@@ -19,11 +19,22 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
+/**
+ * Class for Running and operating the data page for the arc
+ *
+ * @author x
+ */
 public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar mprogressbar;
     private int mprogressbarStat =0;
     private Handler handler = new Handler();
 
+    /**
+     * Method for displaying information
+     *
+     * shows which studyrooms are available and allows users to set occupancy
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,13 +77,22 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-    //sets activity to selection page
+    /**
+     * Method sets activity to selection page
+     *
+     * @param view
+     */
     public void back(View view) {
         Intent intent =new Intent(this,second.class);
         startActivity(intent);
     }
 
-
+    /**
+     * Method creates real-time database object
+     *
+     * @param roomnum
+     * @param isoccupied
+     */
     public void database(int roomnum, int isoccupied){
         //create real-time database object
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -81,14 +101,22 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
+            /**
+             * This method is called once with the initial value and again
+             *  whenever data at this location is updated.
+             *
+             * @param dataSnapshot
+             */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 Log.d("room number " , "Value is: " + value);
             }
-
+            /**
+             * Method called if the database fails to read the input value
+             *
+             * @param error
+             */
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
@@ -99,6 +127,11 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    /**
+     * Method to set a room to "occupied" if a user clicks the button
+     *
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         // if the "occupy" button is clicked it changes to "occupied"
@@ -267,6 +300,10 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
     }
 
     //this function will be called OnCreate and will display whether a study room is occupied
+
+    /**
+     * Method called OnCreate and will display whether a study room is occupied
+     */
     private void set_studyRooms(){
         final int roomnumbers[] = {110, 112,131,147,149,151,153,214,216,217,219}; // array of study room numbers
 
@@ -327,6 +364,9 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    /**
+     * Method to collect data in an area and send to firebase
+     */
     private void bluetoothData(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("NUM DEVICES");
@@ -355,7 +395,9 @@ public class ARCdata extends AppCompatActivity implements View.OnClickListener {
 
     }
 
-
+    /**
+     * Method to display page data
+     */
     private void arcdata(){
 
         Calendar time = Calendar.getInstance();

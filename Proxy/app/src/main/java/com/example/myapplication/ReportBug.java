@@ -13,11 +13,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
+/**
+ * Class to allow user to create an error report
+ *
+ * @author x
+ */
 public class ReportBug extends AppCompatActivity {
 
     private EditText mEditTextBug;
 
+    /**
+     * Method to create report
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +42,9 @@ public class ReportBug extends AppCompatActivity {
         });
     }
 
+    /**
+     * Method to send report
+     */
     private void sendMail() {
         double random = Math.random();
         String recipient = "proxycreators@gmail.com";

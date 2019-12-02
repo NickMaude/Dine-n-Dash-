@@ -14,9 +14,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * Class to create and operate the login page of the proxy app
+ *
+ * @author x
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth mAuth;
     EditText editTextUsername, editTextPassword;
+    /**
+     * Method to add user data to firebase
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextPassword = findViewById(R.id.editText3);
     }
 
-
+    /**
+     * Method to check if username and password match an existing user
+     *  Username must be a valid Ohio University email
+     *  Password must be at least 6 characters long
+     *
+     *
+     */
     public void login() {
         String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -70,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    /**
+     * Trigger login and start activity when button is pressed by user
+     *
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

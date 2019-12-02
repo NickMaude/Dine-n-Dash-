@@ -12,10 +12,16 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+/**
+ * Class to run and operate the menu screen that displays locations to users
+ *
+ * @author x
+ */
 public class second extends AppCompatActivity{
     EditText ARC;
-
+    /**
+     * Method to create buttons that link to the data pages for each location
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +55,9 @@ public class second extends AppCompatActivity{
 
     }
 
-
+    /**
+     * Method to end session
+     */
     public void logout(View view) {
         Intent intent =new Intent(this,MainActivity.class);
         startActivity(intent);

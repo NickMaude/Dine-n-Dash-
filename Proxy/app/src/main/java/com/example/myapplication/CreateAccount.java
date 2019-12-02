@@ -16,9 +16,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * Class for users to create an account on the Proxy app
+ *
+ * @author x
+ */
 public class CreateAccount extends AppCompatActivity implements View.OnClickListener {
 
-    EditText editTextUsername, editTextPassword;
+    /**
+     * The Edit text username.
+     */
+    EditText editTextUsername, /**
+     * The Edit text password.
+     */
+    editTextPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -34,6 +45,14 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
     }
 
+    /**
+     * Method to make sure user meets all requirement for new account
+     *
+     * A valid email and password are required
+     *  Email must be and @ohio.edu
+     *  Password must be at least 6 char
+     *
+     */
     private void registerUser(){
         String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -74,7 +93,9 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-
+    /**
+    * Will create account when registerUser() finishes
+    * */
     @Override
     public void onClick(View view) {
         switch (view.getId()){
