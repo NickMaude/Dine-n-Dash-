@@ -1,5 +1,6 @@
 package com.proxy.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,24 +10,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
 
 public class ReportBug extends AppCompatActivity {
+
+    private EditText mEditTextBug;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_bug);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mEditTextBug = findViewById(R.id.edit_text_bug);
+
+        Button buttonSend = findViewById(R.id.button_send);
+        buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                sendMail();
             }
         });
+    }
+
+    private void sendMail() {
+        double random = Math.random();
+        String recipient = "proxycreators@gmail.com";
+        String recipients[] = {""};
+        recipients[0] = recipient;
+        String subject = "Bug " + random;
+        String bug = mEditTextBug.getText().toString();
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+
+        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, bug);
+
+        intent.setType("message/rfc822");
+        startActivity(Intent.createChooser(intent, "Choose an email client."));
     }
 
 }
