@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.proxy.myapplication;
 
 import android.content.Context;
 

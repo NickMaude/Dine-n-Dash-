@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:174872504761:android:29767806b73cc3fd9aee68",
         "android_client_info": {
-          "package_name": "com.example.myapplication"
+          "package_name": "com.proxy.myapplication"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "174872504761-tgd9k2u9hep7dmg2te65b82n1r7cockl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.myapplication",
+            "package_name": "com.proxy.myapplication",
             "certificate_hash": "57703445e184e187f359bc9cacb18b427262f01d"
           }
         },

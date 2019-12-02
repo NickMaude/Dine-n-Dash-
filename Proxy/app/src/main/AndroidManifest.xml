@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.proxy.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -18,19 +18,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ReportBug"
+            android:name="com.proxy.myapplication.ReportBug"
             android:label="@string/title_activity_report_bug"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".CreateAccount" />
+        <activity android:name="com.proxy.myapplication.CreateAccount" />
         <activity
-            android:name=".ARCdata"
+            android:name="com.proxy.myapplication.ARCdata"
             android:label="activity_arcdata"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".second"
+            android:name="com.proxy.myapplication.second"
             android:label="activity_second"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.proxy.myapplication.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
