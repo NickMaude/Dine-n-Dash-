@@ -1,5 +1,5 @@
 # Proxy
-Android App to determine the amount of people in the univeristy dining halls and report the avalibility of studyrooms in the ARC 
+Android App to report the avalibility of studyrooms in the ARC 
 
 Completed for CS 3560.
 
