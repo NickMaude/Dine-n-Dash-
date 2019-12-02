@@ -1,0 +1,22 @@
+Proxy Meeting Minutes 12/2/2019 (LAST MEETING)
+
+All members present:
+  Laura Klions
+  Nick Maude
+  Jeff Parker
+  Chase King
+
+
+Completed During Meeting:
+  -Attempted to push Proxy app to the app store
+    -in progress
+
+  -Fixed Bug Reporting Class
+    -Chase
+
+  -Updated firebase users
+
+  -Finished final presentations
+    -Created powerpoint
+    -Possibly video
+    -email demo out to test users

@@ -1,5 +1,4 @@
 10-16-19 Meeting minutes
-All group members present
 
   Completed during Meeting
     -all run app login screen

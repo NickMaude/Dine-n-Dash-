@@ -1,0 +1,13 @@
+Proxy Meeting Minutes 11/20/2019
+
+All members present:
+  Laura Klions
+  Nick Maude
+  Jeff Parker
+  Chase King
+
+Completed During Meeting:
+  -Firebase updates
+  -App testing
+  -Run on a few different devices
+  -lock down which device will be used in final presentation

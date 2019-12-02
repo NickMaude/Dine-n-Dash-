@@ -1,0 +1,14 @@
+Proxy Meeting Minutes 11/13/2019
+
+All members present:
+  Laura Klions
+  Nick Maude
+  Jeff Parker
+  Chase King
+
+Completed during Meeting:
+  -Learned to use Java Doc Plug in for android studio
+    -lots of bug initially
+  -Begin commenting classes and methods for Documentation
+
+  -fix bugs with user data

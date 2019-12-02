@@ -1,0 +1,20 @@
+Proxy Meeting Minutes 11/25/2019
+
+All members present:
+  Laura Klions
+  Nick Maude
+  Jeff Parker
+  Chase King
+
+Completed During Meeting:
+  -Discuss final details needed to complete project by deadline
+    -Documentation
+    -Play store upload
+    -bug fixes
+
+  -Abandon goals that can't be Met
+    -Fit all phone sizes
+    -Multiple locations
+    -advance statistical analysis
+
+  -
