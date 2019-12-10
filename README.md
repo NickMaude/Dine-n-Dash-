@@ -1,5 +1,5 @@
 # Proxy
-Android App to report the avalibility of studyrooms in the ARC 
+A location occupancy app for Ohio University students
 
 Completed for CS 3560.
 
