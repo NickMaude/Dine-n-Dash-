@@ -1,8 +1,6 @@
 # Proxy
 A location occupancy app for Ohio University students
 
-Completed for CS 3560.
-
 https://play.google.com/store/apps/details?id=com.proxy.myapplication
 
 ## Created by 
